@@ -6,6 +6,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { View, Text, TextInput, Button, ScrollView, Picker, TouchableOpacity } from 'react-native';
 import MainScreen from './MainScreen';
 import CreateAccountScreen from './CreateAccountScreen';
+import SuccessScreen from './SuccessScreen';
+import DictationScreen from './DictationScreen';
 
 const Stack = createStackNavigator();
 
@@ -18,14 +20,16 @@ export default function App() {
         <Stack.Screen name="StoryGen" component={HomeScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="CreateAccount" component={CreateAccountScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="MainScreen" component={MainScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="SuccessScreen" component={SuccessScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="DictScreen" component={DictationScreen} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation, route }) => {
   const setDifficulty= (difficulty) => {
-    navigation.navigate('CreateAccount', {level: difficulty});
+    navigation.navigate('CreateAccount', {level: difficulty, cnt: successCount});
   };
 
   // const setDifficulty = (chosenDifficulty) => {
@@ -33,7 +37,10 @@ const HomeScreen = ({ navigation }) => {
   //   // Navigate to SecondScreen when any difficulty button is pressed
   //   navigation.navigate('SecondScreen', { difficulty: chosenDifficulty });
   // };
-
+  let successCount = 0;
+  if (route.params) {
+    successCount = route.params.successCount;
+  }
   return (
 <ScrollView contentContainerStyle={styles.container}>
       
