@@ -13,26 +13,27 @@ const MainScreen = ({ navigation, route }) => {
     const generateStory = async () => {
       try {
         let prompt;
-        if (lev === 'easy') {
-          prompt = `Write a 3 sentence story for a first or second grade student that is easy to read. Use ${keywords}.`;
-        } else if (lev === 'medium') {
-          prompt = `Write a 4 sentence story for a 3rd or 4th grader which is easy to read, must be 4 sentences. Use ${keywords}.`;
-        } else if (lev === 'hard') {
-          prompt = `Write a 5 sentence story for a fifth grade student that is moderate in difficulty. Use ${keywords}.`;
+        if (lev === 'Easy') {
+          prompt = `Write a 3 sentence story for a first or second grade student that is easy to read. Use ${passedVariable}.`;
+        } else if (lev === 'Medium') {
+          prompt = `Write a 4 sentence story for a 3rd or 4th grader which is easy to read, must be 4 sentences. Use ${passedVariable}.`;
+        } else if (lev === 'Hard') {
+          prompt = `Write a 5 sentence story for a fifth grade student that is moderate in difficulty. Use ${passedVariable}.`;
         }
         let response;
 
       
         try {
+          if (!generatedStory) {
           const response = await axios.post(
             'https://api.openai.com/v1/chat/completions',
             {
               model: 'gpt-3.5-turbo',
-              messages: [{ role: 'user', content: `Write a 5 sentence story for a fifth grade student about ${passedVariable} that is moderate in difficulty.` }],
+              messages: [{ role: 'user', content: `${prompt}` }],
             },
             { 
               headers: {
-                Authorization: `Bearer -`,
+                Authorization: `Bearer ignore`,
                 'Content-Type': 'application/json',
               },
             }
@@ -40,9 +41,11 @@ const MainScreen = ({ navigation, route }) => {
         
           const generatedText = response.data.choices[0].message.content;
           setGeneratedStory(generatedText);
+          }
         } catch (error) {
           console.error('Error generating story:', error);
         }
+        
         
   
         // const generatedText = response?.choices?.[0]?.message?.content ??"not working!";
@@ -53,7 +56,7 @@ const MainScreen = ({ navigation, route }) => {
     };
 
     generateStory();
-  }, [lev]);
+  }, []);
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -74,13 +77,13 @@ const styles = StyleSheet.create({
   generatedStoryLabel: {
     marginTop: 100,
     textAlign: 'center',
-    marginBottom: 450,
+    marginBottom: 50,
     fontFamily: 'Times New Roman',
     fontSize: 30,
   },
   generatedStoryText: {
-    marginTop: -420,
-    marginBottom: 200,
+    //marginTop: -420,
+    marginBottom: 600,
     fontFamily: 'Times New Roman',
     fontSize: 30,
   },
