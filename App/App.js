@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 // import { StyleSheet, Text, View, Button } from 'react-native';
-import { View, Text, TextInput, Button, ScrollView, Picker } from 'react-native';
+import { View, Text, TextInput, Button, ScrollView, Picker, TouchableOpacity } from 'react-native';
 import MainScreen from './MainScreen';
 import CreateAccountScreen from './CreateAccountScreen';
 
@@ -24,8 +24,8 @@ export default function App() {
 }
 
 const HomeScreen = ({ navigation }) => {
-  const setDifficulty= () => {
-    navigation.navigate('CreateAccount');
+  const setDifficulty= (difficulty) => {
+    navigation.navigate('CreateAccount', {level: difficulty});
   };
 
   // const setDifficulty = (chosenDifficulty) => {
@@ -41,32 +41,35 @@ const HomeScreen = ({ navigation }) => {
       <Text style={[styles.title, styles.centerText]}>StoryGen</Text>
 
         <Text style={[styles.top, styles.centerText]}>Create a story!</Text>
-        <Text style={[styles.label, styles.centerText]}>Pick a difficulty level:</Text>
+        <Text style={[styles.label, styles.centerText]}>Pick a difficulty level for your story:</Text>
         
         <View style={styles.difficultyButtons}>
+
           <View style={[styles.button, { backgroundColor: '#4CAF50' }]}>
             <Button
               title="Easy"
-              onPress={() => setDifficulty('easy')}
+              onPress={() => setDifficulty("Easy")}
               color="#000" // Black text color
-              
             />
+            
           </View>
           <View style={[styles.button, { backgroundColor: '#FFC107' }]}>
             <Button
               title="Medium"
-              onPress={() => setDifficulty('medium')}
+              onPress={() => setDifficulty('Medium')}
               color="#000" // Black text color
-              
+
             />
+
           </View>
           <View style={[styles.button, { backgroundColor: '#F44336' }]}>
             <Button
               title="Hard"
-              onPress={() => setDifficulty('hard')}
+              onPress={() => setDifficulty('Hard')}
               color="#000" // Black text color
               
             />
+
           </View>
         </View>
       </View>
