@@ -32,7 +32,7 @@ const MainScreen = ({ navigation, route }) => {
         },
         {
           headers: {
-            Authorization: `Bearer ignore`,
+            Authorization: `Bearer sk-ignore`,
             'Content-Type': 'application/json',
           },
         }
@@ -191,7 +191,6 @@ const MainScreen = ({ navigation, route }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     padding: 20,
     backgroundColor: '#F5F5DC',
   },

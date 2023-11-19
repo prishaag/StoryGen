@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "781bc165-839f-434e-a250-40157ccf6d09"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.vivianrms.storygen2"
+    }
+  }
+}
