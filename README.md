@@ -1,7 +1,6 @@
 # StoryGen
 
-StoryGen is an interactive learning app designed to help children improve their reading skills by allowing them to generate and engage with stories of their choice. Harnessing the power of ChatGPT, StoryGen enables children to create stories tailored to their reading level and interests, allowing them to learn at an accelerated rate.
-
+StoryGen is an interactive learning app designed to help children improve their reading skills by allowing them to generate and engage with stories of their choice. Harnessing the power of ChatGPT, StoryGen enables children to create stories tailored to their reading level and interests, allowing them to learn at an accelerated rate. If you would like to watch a demo of our app, you can find it here: https://www.youtube.com/watch?v=Ljc6oeeNnrE
 
 ## Features
 
