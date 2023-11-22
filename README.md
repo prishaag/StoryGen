@@ -33,6 +33,7 @@ StoryGen was created using Node.js and React Native. StoryGen relies on connecti
    ```bash
    git clone https://github.com/prishaag/StoryGen.git
    cd StoryGen
+   cd App 
 2. Install dependencies
 3. Open MainScreen.js and add your chatgpt API key where "ignore" is written
 4. Run the app using npm start. Ensure that ExpoGo is installed on your mobile device in order to view the app.
