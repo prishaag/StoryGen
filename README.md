@@ -1,6 +1,10 @@
 # StoryGen
+Update for anyone taking a look at this project: The repo is currently kind of a mess, so here's some instructions to actually see the code used in the application (we have a bunch of junk files also here that still need to be deleted haha). Anyways, go to the App folder, and then take a look at App.js, CreateAccount.js Mainscreen.js, Dictation.js, and Success.js. We need to still fix the naming of these files to make sense! Will probably clean these soon:) Thank you for your patience!
 
-StoryGen is an interactive learning app designed to help children improve their reading skills by allowing them to generate and engage with stories of their choice. Harnessing the power of ChatGPT, StoryGen enables children to create stories tailored to their reading level and interests, allowing them to learn at an accelerated rate. If you would like to watch a demo of our app, you can find it here: https://www.youtube.com/watch?v=Ljc6oeeNnrE
+StoryGen is an interactive learning app designed to help children improve their reading skills by allowing them to generate and engage with stories of their choice. Harnessing the power of ChatGPT, StoryGen enables children to create stories tailored to their reading level and interests, allowing them to learn at an accelerated rate. 
+
+DEMO: https://www.youtube.com/watch?v=Ljc6oeeNnrE
+
 
 ## Features
 
