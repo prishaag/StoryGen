@@ -23,6 +23,7 @@ Update for anyone taking a look at this project: The repo is currently kind of a
    - **Word Spelling Practice:** For new words encountered, children can practice spelling, reinforcing vocabulary.
   
 ## Development details
+
 StoryGen was created using Node.js and React Native. StoryGen relies on connection to the ChatGPT 3.5 Turbo API, text to speech packages, and natural language processing packages. 
 
 ## Getting Started
